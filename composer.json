@@ -5,8 +5,5 @@
         "psr-4": {
             "Denis303\\Auth\\" : ""
         }
-    },
-    "require": {
-        "denis303/codeigniter4-not-remember-me": "*"
     }
 }
