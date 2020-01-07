@@ -1,0 +1,12 @@
+{
+    "name": "denis303/codeigniter4-auth",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Denis303\\Auth\\" : ""
+        }
+    },
+    "require": {
+        "denis303/codeigniter4-not-remember-me": "*"
+    }
+}
