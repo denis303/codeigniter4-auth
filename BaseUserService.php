@@ -6,7 +6,7 @@
  */
 namespace Denis303\Auth;
 
-class UserService
+abstract class BaseUserService
 {
 
     const NOT_REMEMBER_SUFFIX = '_not_remember';
