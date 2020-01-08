@@ -26,7 +26,7 @@ class UserService
         $this->_notRememberMe = new NotRememberMe($name . static::NOT_REMEMBER_SUFFIX);
     }
 
-    public function setUserId($id, bool $rememberMe = true)
+    protected function setUserId($id, bool $rememberMe = true)
     {
         $this->_auth->setAuthId($id);
 
@@ -42,7 +42,7 @@ class UserService
         }
     }
 
-    public function getUserId()
+    protected function getUserId()
     {
         if (!$this->_notRememberMe->validateToken())
         {
@@ -61,7 +61,7 @@ class UserService
         return $return;
     }
 
-    public function logout()
+    protected function deleteUserId()
     {
         $this->_auth->deleteAuthId();
 
