@@ -32,7 +32,7 @@ class AuthSession
         $this->_session->set($this->name, $auth);
     }
 
-    public function deleteAuthId()
+    public function unsetAuthId()
     {
         $this->_session->remove($this->name);
     }

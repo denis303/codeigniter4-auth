@@ -32,7 +32,7 @@ class NotRememberMeSession
         return $session->set($this->name, $token);
     }
 
-    public function deleteToken()
+    public function unsetToken()
     {
         $session = Services::session();
 

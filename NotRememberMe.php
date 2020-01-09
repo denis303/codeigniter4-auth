@@ -53,11 +53,11 @@ class NotRememberMe
         $this->_cookie->setToken($token);
     }
 
-    public function deleteToken()
+    public function unsetToken()
     {
-        $this->_session->deleteToken();
+        $this->_session->unsetToken();
 
-        $this->_cookie->deleteToken();
+        $this->_cookie->unsetToken();
     }
 
 }

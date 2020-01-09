@@ -72,7 +72,7 @@ class NotRememberMeCookie
         );
     }
 
-    public function deleteToken()
+    public function unsetToken()
     {
         helper(['cookie']);
 

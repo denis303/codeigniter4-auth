@@ -6,7 +6,7 @@
  */
 namespace Denis303\Auth;
 
-abstract class BaseUserService
+abstract class UserService
 {
 
     const NOT_REMEMBER_SUFFIX = '_not_remember';
@@ -26,13 +26,13 @@ abstract class BaseUserService
         $this->_notRememberMe = new NotRememberMe($name . static::NOT_REMEMBER_SUFFIX);
     }
 
-    protected function setUserId($id, bool $rememberMe = true)
+    public function setUserId($id, bool $rememberMe = true)
     {
         $this->_auth->setAuthId($id);
 
         if ($rememberMe)
         {
-            $this->_notRememberMe->deleteToken();
+            $this->_notRememberMe->unsetToken();
         }
         else
         {
@@ -42,7 +42,7 @@ abstract class BaseUserService
         }
     }
 
-    protected function getUserId()
+    public function getUserId()
     {
         if (!$this->_notRememberMe->validateToken())
         {
@@ -55,17 +55,17 @@ abstract class BaseUserService
 
         if (!$return)
         {
-            $this->_notRememberMe->deleteToken();
+            $this->_notRememberMe->unsetToken();
         }
 
         return $return;
     }
 
-    protected function deleteUserId()
+    public function unsetUserId()
     {
-        $this->_auth->deleteAuthId();
+        $this->_auth->unsetAuthId();
 
-        $this->_notRememberMe->deleteToken();
+        $this->_notRememberMe->unsetToken();
     }
 
 }
