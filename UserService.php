@@ -46,7 +46,7 @@ abstract class UserService
     {
         if (!$this->_notRememberMe->validateToken())
         {
-            $this->logout();
+            $this->unsetUserId();
 
             return null;
         }
