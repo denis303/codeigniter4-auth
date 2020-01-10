@@ -9,7 +9,7 @@ namespace Denis303\Auth;
 interface UserServiceInterface
 {
     
-    public function setUserId($id, bool $rememberMe = true)
+    public function setUserId($id, bool $rememberMe = true);
 
     public function getUserId();
 
